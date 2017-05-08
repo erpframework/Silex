@@ -456,10 +456,10 @@ silex.view.Stage.prototype.handleKey = function(event) {
         this.controller.stageController.markAsUndoable();
         // apply the offset
         this.moveElements(this.selectedElements, offsetX, offsetY);
-        // prevent default behavior for this key
-        event.preventDefault();
       }
     }
+    // prevent default behavior for this key
+    event.preventDefault();
   }
 };
 
@@ -1235,8 +1235,8 @@ silex.view.Stage.prototype.handleRightClick = function(x, y) {
   rightClickDiv.style.display='block';
   rightClickDiv.style.left = (x+myMenuWidth)+'px';
   rightClickDiv.style.top = (y+myContextHeight)+'px';
-  
-  setTimeout(() => { 
+
+  setTimeout(() => {
     const el = goog.dom.getElementByClass('rightClick');
     el.style.display='none';
     }, 3000);
